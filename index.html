@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Gigs - Vue.js Setup</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.min.js"></script>
+   <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        
+        .event-board {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .welcome-message {
+            font-size: 1.1em;
+            color: #555;
+            text-align: center;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .app-info {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin-top: 20px;
+        }
+        
+        .app-info h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .app-info p {
+            margin-bottom: 0;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>{{ appTitle }} </h1>
+        <p class="subtitle">{{ appSubtitle }}</p>
+
+        <div class="event-board">
+            <div class="welcome-message">
+                {{ welcomeMessage}}
+            </div>
+
+            <div class="app-info">
+                <h3>Vue.js is working</h3>
+                <p>I did my first vue instance</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //creating the vue instance
+
+        const { createApp } = Vue;
+
+        createApp({
+            //Thus is my data or the "state" of our application
+            data(){
+                return{
+                    appTitle: 'Local Gigs',
+                    appSubtitle: 'Discover Amazing Events in Yout Area',
+                    welcomeMessage: 'Welcome to you personal event discovery platform.'
+                }
+            }
+        }).mount('#app') //this connects my Vue app to HTML element with id="app"
+    </script>
+</body>
+</html>
